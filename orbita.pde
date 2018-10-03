@@ -12,12 +12,16 @@ void setup()
 
 void draw()
 {
-	fill(0, 12);
+	fill(0,0,0,2);
 	noStroke();
-	rect(0, 0, width, height);
+	//rect(0, 0, width, height);
 
         s1.actualiza();
         s1.pinta();
+}
+void mousePressed()
+{
+	s1.reset();
 }
 
 /* Clases adicionales */
@@ -37,7 +41,7 @@ class Satelite
 		arg2 = PI;
 		cenx = width/2;
 		ceny = height/2;
-                velgiro = PI/140;
+		velgiro = PI/round(random(180));
 		velgiro2 = PI/round(random(180));
                 radio = 15;
 		colr = int(random(255));
@@ -50,7 +54,19 @@ class Satelite
 		arg = arg + velgiro;
 		arg2 = arg2 + velgiro2;
 		modu = 200*sin(arg2);
+
         }
+
+	void reset()
+	{
+		background(0);
+
+		colr = int(random(255));
+		colg = int(random(255));
+		colb = int(random(255));
+		velgiro = PI/round(random(180));
+		velgiro2 = PI/round(random(180));
+	}
 
         void pinta()
         {
