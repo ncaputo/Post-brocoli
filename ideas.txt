@@ -1,0 +1,2 @@
+Incluir solo el Valor absoluto al obtener el modulo
+Incluir un "offset" al valor del modulo para dejar el centro vac√o
